@@ -36,9 +36,6 @@
     transform: rotate(360deg);
   }
 }
-*{
-  font-family: 'fira code', Courier, monospace;
-}
 button{
   margin: 2px;
 }
