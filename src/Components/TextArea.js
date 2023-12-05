@@ -73,8 +73,8 @@ export default function TextArea(props) {
         setText(event.target.value)
     }
     return (
-        <div>
-            <div className="mb-3">
+        <>
+            <div>
                 <label htmlFor="myBox" className="form-label my-3"><span style={{ fontSize: '25px' }}>{props.title}</span></label>
                 <textarea id="myBox" rows="10" className="form-control" style={{ backgroundColor: props.mode === 'light' ? 'white' : 'rgb(48, 49, 52)', color: props.mode === 'light' ? 'black' : 'white' }} value={text} onChange={onChangeHandler}></textarea>
                 <div id="buttons">
@@ -88,7 +88,7 @@ export default function TextArea(props) {
 
                 </div>
             </div>
-            <div id="info-text" className='container'>
+            <div id="info-text" className="container">
                 <h4 style={{ textDecoration: "underline" }}>Info about the text</h4>
                 <div id="info-section" className={`d-flex`} style={{ alignItems: "center" }}>
                     <section style={{ border: `2px solid ${props.mode === 'light' ? 'black' : 'white'}`, padding: "10px", display: "flex", justifyContent: "center", alignItems: "center" }}>{lengthOfWord()}</section>
@@ -97,6 +97,14 @@ export default function TextArea(props) {
                     <h5 className='mx-2 my-1'>characters.</h5>
                 </div>
             </div>
-        </div>
+            <div className="footer">
+                <p>Made with 💖 by Oindil</p>
+                <div className='icons'>
+                    <a href="https://github.com/OINDIL" target='_blank'><i class={`bx bxl-github text-${props.mode === 'dark' ? 'light' : 'dark'}`}></i></a>
+                    <a href="https://www.instagram.com/oindil.golder/" target='_blank'><i class={`bx bxl-instagram-alt text-${props.mode === 'dark' ? 'light' : 'dark'}`}></i></a>
+                    <a href="https://www.linkedin.com/in/oindil-golder" target='_blank'><i class={`bx bxl-linkedin-square text-${props.mode === 'dark' ? 'light' : 'dark'}`}></i></a>
+                </div>
+            </div>
+        </>
     )
 }
