@@ -5,13 +5,8 @@ export default function TextArea(props) {
     const [text, setText] = useState("")
 
     function lengthOfWord() {
-        let count = 0
-        for (let i = 0; i < text.split(" ").length; i++) {
-            if (text.split(" ")[i] == "") { // converting to array and iterating the whole array through the for loop
-                count++
-            }
-        }
-        return text.split(" ").length - count
+        const wordsArray = text.match(/\S+/g);
+        return wordsArray ? wordsArray.length : 0;
     }
     function noOfChars(){
         const stringWithoutSpaces = text.replace(/\s/g, '');
@@ -83,9 +78,8 @@ export default function TextArea(props) {
                     <button className={`btn btn-${props.mode === 'dark' ? 'light' : 'dark'}`} disabled={text.length === 0} onClick={textLowerCase}>To Lowercase</button>
                     <button className={`btn btn-${props.mode === 'dark' ? 'light' : 'dark'}`} disabled={text.length === 0} onClick={alternateText}>aLtErNaTiNg tExT</button>
                     <button className={`btn btn-${props.mode === 'dark' ? 'light' : 'dark'}`} disabled={text.length === 0} onClick={removeExtraSpaces}>Remove Extra Spaces</button>
-                    <button className={`btn btn-${props.mode === 'dark' ? 'light' : 'dark'}`} disabled={text.length === 0} onClick={copyText}><i class="ri-clipboard-line"></i>copy</button>
-                    <button className={`btn btn-${props.mode === 'dark' ? 'light' : 'dark'}`} disabled={text.length === 0} onClick={textClear}><b><i class="ri-delete-bin-6-line"></i></b></button>
-
+                    <button className={`btn btn-primary`} disabled={text.length === 0} onClick={copyText}><i className="ri-clipboard-line"></i>copy</button>
+                    <button className={`btn btn-${props.mode === 'dark' ? 'light' : 'dark'}`} disabled={text.length === 0} onClick={textClear}><b><i className="ri-delete-bin-6-line"></i></b></button>
                 </div>
             </div>
             <div id="info-text" className="container">
@@ -100,9 +94,9 @@ export default function TextArea(props) {
             <div className="footer">
                 <p>Made with 💖 by Oindil</p>
                 <div className='icons'>
-                    <a href="https://github.com/OINDIL" target='_blank'><i class={`bx bxl-github text-${props.mode === 'dark' ? 'light' : 'dark'}`}></i></a>
-                    <a href="https://www.instagram.com/oindil.golder/" target='_blank'><i class={`bx bxl-instagram-alt text-${props.mode === 'dark' ? 'light' : 'dark'}`}></i></a>
-                    <a href="https://www.linkedin.com/in/oindil-golder" target='_blank'><i class={`bx bxl-linkedin-square text-${props.mode === 'dark' ? 'light' : 'dark'}`}></i></a>
+                    <a href="https://github.com/OINDIL" target='_blank' rel="noreferrer"><i className={`bx bxl-github text-${props.mode === 'dark' ? 'light' : 'dark'}`}></i></a>
+                    <a href="https://www.instagram.com/oindil.golder/" target='_blank' rel="noreferrer"><i className={`bx bxl-instagram-alt text-${props.mode === 'dark' ? 'light' : 'dark'}`}></i></a>
+                    <a href="https://www.linkedin.com/in/oindil-golder" target='_blank' rel="noreferrer"><i className={`bx bxl-linkedin-square text-${props.mode === 'dark' ? 'light' : 'dark'}`}></i></a>
                 </div>
             </div>
         </>
