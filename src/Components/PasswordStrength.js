@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-function PasswordStrength() {
+function PasswordStrength(props) {
     const [progressWidth,setProgressWidth] = useState(1)
     const [inputText,setInputText] = useState('')
     const [progressColor,setProgressColor] = useState('danger')
@@ -34,6 +34,7 @@ function PasswordStrength() {
                     <div className="form-floating mb-3">
                         <input type="email" className="form-control" id="floatingInput" placeholder="name@example.com" 
                         onChange={handleInput}
+                        style={{ backgroundColor: props.mode === 'light' ? 'white' : 'rgb(48, 49, 52)', color:props.mode === 'light'?'rgb(48, 49, 52)':'white'}}
                         />
                         <label htmlFor="floatingInput">Check Password Strength</label>
                     </div>

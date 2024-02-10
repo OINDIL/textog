@@ -91,7 +91,7 @@ export default function TextArea(props) {
                     <h5 className='mx-2 my-1'>characters.</h5>
                 </div>
             </div>
-            <PasswordStrength/>
+            <PasswordStrength mode={props.mode}/>
             <div className="footer">
                 <p>Made with 💖 by Oindil</p>
                 <div className='icons'>
