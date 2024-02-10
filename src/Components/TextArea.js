@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import PasswordStrength from './PasswordStrength';
 export default function TextArea(props) {
 
     const [text, setText] = useState("")
@@ -91,6 +91,7 @@ export default function TextArea(props) {
                     <h5 className='mx-2 my-1'>characters.</h5>
                 </div>
             </div>
+            <PasswordStrength/>
             <div className="footer">
                 <p>Made with 💖 by Oindil</p>
                 <div className='icons'>
